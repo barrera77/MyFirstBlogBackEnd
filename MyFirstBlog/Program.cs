@@ -1,7 +1,7 @@
 using MyFirstBlog.Helpers;
 using MyFirstBlog.Services;
 
-var  MyAllowLocalhostOrigins = "_myAllowLocalhostOrigins";
+var MyAllowLocalhostOrigins = "_myAllowLocalhostOrigins";
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +13,7 @@ var env = builder.Environment;
 services.AddDbContext<DataContext>();
 
 services.AddCors(policyBuilder => {
-    policyBuilder.AddPolicy( MyAllowLocalhostOrigins,
+    policyBuilder.AddPolicy(MyAllowLocalhostOrigins,
         policy => {
             policy.WithOrigins("http://localhost:3000").AllowAnyHeader().AllowAnyMethod();
         });
